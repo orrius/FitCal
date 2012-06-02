@@ -1,0 +1,13 @@
+drop table if exists event;
+create table event (
+       id integer primary key autoincrement,
+       title string not null,
+       datestamp date not null
+);
+
+drop table if exists moment;
+create table moment (
+       id integer primary key autoincrement,
+       title string not null,
+       event_id integer references event(id)
+);

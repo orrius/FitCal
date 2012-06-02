@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+
+  <script>
+  $(document).ready(function() {
+    $("#datepicker").datepicker();
+  });
+  </script>
+</head>
+
+  
+<div id="datepicker"></div>
+<table border="0" callpadding="0" cellspacing="0" class="month">
+  <tr><th class="mon">Mon</th><th class="tue">Tue</th><th class="wed">Wed</th><th class="thu">Thu</th><th class="fri">Fri</th><th class="sat">Sat</th><th class="sun">Sun</th></tr>
+  <tr>
+    {% for day in dates %}
+    {% if day.0 == 0 %}
+    <td class=i>&nbsp;</td>
+    {% else %}
+    <td class={{ day.1 }}>{{ day.0 }}</td>
+    {% if day.1==6 %}
+  </tr>
+  <tr>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block body %}
+<table border="0" callpadding="0" cellspacing="0" class="month">
+  <tr><th class="mon">Mon</th><th class="tue">Tue</th><th class="wed">Wed</th><th class="thu">Thu</th><th class="fri">Fri</th><th class="sat">Sat</th><th class="sun">Sun</th></tr>
+  <tr>
+  {% for entry in entries %}
+  <td class={{ entry[1] }}>{{ entry. }}
+  {% endfor %}
+</ul>
+{% endblock %}

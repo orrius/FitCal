@@ -1,0 +1,11 @@
+from flask import Flask
+import calendar
+app = Flask(__name__)
+
+@app.route("/")
+def calendar():
+    calendar = calendar.HTMLCalendar()
+    return formatmonth(2012,6)
+
+if __name__ == "__main__":
+    app.run()
